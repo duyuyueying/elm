@@ -24,14 +24,14 @@ export default {
       return 'star-' + this.size
     },
     itemClasses() {
-      const result = []
       const score = Math.floor(this.score * 2) / 2
-      const hasDecimal = score % 1 !== 0
+      const isHalf = score % 1 !== 0
       const integer = Math.floor(score)
+      const result = []
       for (let i = 0; i < integer; i++) {
         result.push(CLS_ON)
       }
-      if (hasDecimal) {
+      if (isHalf) {
         result.push(CLS_HALF)
       }
       while (result.length < LENGTH) {
